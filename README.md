@@ -1,4 +1,4 @@
-# Karuna Sharma – Personal Portfolio
+# Karuna jagadale – Personal Portfolio
 
 Module 4 · Practical 1 — a responsive personal portfolio website built with **HTML5, CSS3, Bootstrap 5 and JavaScript**, version-controlled with **Git**, hosted on **GitHub** and deployed with **GitHub Pages**.
 
