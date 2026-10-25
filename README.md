@@ -59,3 +59,5 @@ Search `index.html` for `your-github-username` and `your-linkedin` and replace t
 
 ## Deployment
 GitHub → repository **Settings → Pages → Deploy from a branch → `main` / `(root)`**.
+
+Last updated: October 2026
