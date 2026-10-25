@@ -1,0 +1,46 @@
+/* =========================================================
+   Feature: Dark mode
+   Overrides the colour variables from style.css when
+   <html data-bs-theme="dark"> is set (Bootstrap 5.3 colour modes).
+   ========================================================= */
+
+[data-bs-theme="dark"] {
+  --bg: #0f0e17;
+  --bg-alt: #16151f;
+  --surface: #1d1b29;
+  --text: #ecebf5;
+  --muted: #a9a6bf;
+  --border: #2d2a3e;
+  --nav-bg: rgba(15, 14, 23, 0.92);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --accent-soft: rgba(167, 139, 250, 0.16);
+}
+
+/* Toggle button in the navbar */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: rotate(20deg);
+}
+
+@media (max-width: 991.98px) {
+  .theme-toggle {
+    margin: 0.6rem 0 0 0.4rem;
+  }
+}
