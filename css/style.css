@@ -1,0 +1,557 @@
+/* =========================================================
+   Karuna Sharma – Portfolio styles
+   All colours live in CSS variables so the theme can be
+   changed in one place.
+   ========================================================= */
+
+:root {
+  --accent: #6c4cf1;
+  --accent-dark: #5536d6;
+  --accent-soft: rgba(108, 76, 241, 0.12);
+  --bg: #ffffff;
+  --bg-alt: #f6f5fb;
+  --surface: #ffffff;
+  --text: #1f1d2b;
+  --muted: #6b6880;
+  --border: #e6e3f0;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 10px 30px rgba(31, 29, 43, 0.08);
+  --radius: 16px;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+/* ---------- Buttons ---------- */
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  padding-inline: 1.6rem;
+}
+
+.btn-accent:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-outline-accent {
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  padding-inline: 1.6rem;
+}
+
+.btn-outline-accent:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  padding: 1.1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 0.6rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+
+.navbar-brand:hover {
+  color: var(--text);
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-link {
+  color: var(--text);
+  font-weight: 500;
+  margin-inline: 0.4rem;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent) !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 2px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Mobile menu gets a background so links stay readable */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    margin-top: 0.8rem;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  padding-top: 90px;
+  background: radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+              radial-gradient(circle at 10% 90%, var(--accent-soft), transparent 40%);
+}
+
+.hero-greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.hero-name {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 700;
+}
+
+.hero-role {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 500;
+  color: var(--muted);
+  min-height: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+#typedText {
+  color: var(--accent);
+}
+
+.typed-cursor {
+  color: var(--accent);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-text {
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .hero-text {
+    margin-inline: auto;
+  }
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.avatar {
+  width: min(320px, 75vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 60px rgba(108, 76, 241, 0.35);
+  animation: float 5s ease-in-out infinite;
+}
+
+.avatar span {
+  font-size: clamp(4rem, 12vw, 6.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+@keyframes float {
+  50% { transform: translateY(-15px); }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title span {
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.section-title h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-top: 0.3rem;
+}
+
+/* ---------- About ---------- */
+.lead-text {
+  font-size: 1.15rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.info-list li {
+  padding: 0.45rem 0;
+  color: var(--muted);
+}
+
+.info-list i {
+  color: var(--accent);
+  margin-right: 0.7rem;
+}
+
+.info-list strong {
+  color: var(--text);
+  margin-right: 0.3rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.stat-card h3::after {
+  content: '+';
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Skills ---------- */
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.6rem;
+  height: 100%;
+  box-shadow: var(--shadow);
+}
+
+.skill-icon {
+  font-size: 2.2rem;
+  color: var(--accent);
+}
+
+.skill-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.skill {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.skill .progress {
+  height: 8px;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+
+.skill .progress-bar {
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  border-radius: 10px;
+  transition: width 1.4s ease;
+}
+
+/* ---------- Projects ---------- */
+.filter-btn {
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  margin: 0.25rem;
+  padding: 0.4rem 1.3rem;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.project-item.hide {
+  display: none;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(108, 76, 241, 0.18);
+}
+
+.project-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-card p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.tech-tags span {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+}
+
+.project-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.project-link:hover {
+  color: var(--accent-dark);
+}
+
+/* ---------- Contact ---------- */
+.contact-heading {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.contact-info i {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-form .form-label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem var(--accent-soft);
+}
+
+/* ---------- Footer & back to top ---------- */
+.footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* ---------- Scroll reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .avatar, .skill .progress-bar { transition: none; animation: none; opacity: 1; transform: none; }
+}
