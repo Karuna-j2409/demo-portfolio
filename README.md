@@ -2,7 +2,7 @@
 
 Module 4 · Practical 1 — a responsive personal portfolio website built with **HTML5, CSS3, Bootstrap 5 and JavaScript**, version-controlled with **Git**, hosted on **GitHub** and deployed with **GitHub Pages**.
 
-🔗 **Live site:** `https://<your-github-username>.github.io/portfolio/` *(update after deploying)*
+🔗 **Live site:** `https://karuna-j2409.github.io/demo-portfolio/` 
 
 ## Sections
 | Section | What it shows |
